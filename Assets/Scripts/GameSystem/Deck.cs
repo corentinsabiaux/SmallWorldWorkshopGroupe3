@@ -77,6 +77,9 @@ public class Deck
             };
 
         }
+        races.Shuffle();
+        powers.Shuffle();
+
 
         racesShortList.Add(races[races.Count - 1]);
         powersShortList.Add(powers[powers.Count - 1]);
