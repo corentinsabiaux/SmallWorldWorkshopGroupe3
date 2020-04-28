@@ -120,6 +120,7 @@ public class ConquestPhase : PlayerPhase
                 }
             }
             player.actualRace.Conquest(boardPos,player);
+            player.actualPower.Conquest(boardPos, player);
             player.conquestedCase.Add(boardPos);
             b.troopsNumber = cost;
             b.raceType = player.actualRace.type;
