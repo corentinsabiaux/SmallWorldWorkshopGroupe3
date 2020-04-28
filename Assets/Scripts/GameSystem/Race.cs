@@ -20,6 +20,7 @@ public abstract class Race
         Giants,
         Skaven,
         Humans,
+        Skeleton,
         nothing
     }
 
@@ -41,4 +42,5 @@ public abstract class Race
     public abstract void EndTurn(Player p);
     public abstract void LoosConquestedCase(int boardPos, Player p);
     public abstract void Declin(Player p);
+
 }
