@@ -21,6 +21,7 @@ public class BoardCase
         Mine,
         MagicSource,
         Cave,
+        Saloon,
         Nothing
     }
 
@@ -40,6 +41,7 @@ public class BoardCase
         haveTrollLair = false;
         haveHero = false;
         haveDragon = false;
+        haveSaloon = false;
         raceType = Race.RaceType.nothing;
         racePhase = Race.RacePhase.Actual;
         playerNumber = 0;
@@ -58,6 +60,7 @@ public class BoardCase
     public bool haveTrollLair { get; set; }
     public bool haveHero { get; set; }
     public bool haveDragon { get; set; }
+    public bool haveSaloon { get; set; }
     public Race.RaceType raceType { get; set; }
     public int playerNumber {get;set;}
     public Race.RacePhase racePhase { get; set; }

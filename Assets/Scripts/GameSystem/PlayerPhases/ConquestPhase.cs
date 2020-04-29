@@ -90,6 +90,7 @@ public class ConquestPhase : PlayerPhase
 
         if (b.haveFortresse) { cost++; }
         if (b.haveTrollLair) { cost++; }
+        if (b.haveSaloon) { cost++; }
         if (b.type == BoardCase.CaseType.Mountain) { cost++; }
         cost += b.forgottenTribe * 1;
         cost += b.camping * 1;
