@@ -14,14 +14,14 @@ public class Orcs : Race
         troopsUsed = 0;
         troopsMax = 10;
         type = RaceType.Orcs;
-        tunrConquestCount = 0;
+        turnConquestCount = 0;
     }
 
-    public int tunrConquestCount;
+    public int turnConquestCount;
 
     public override void StartTurn(Player p)
     {
-        tunrConquestCount = 0;
+        turnConquestCount = 0;
     }
     public override bool CanConquest(int boardPos, Player p)
     {
@@ -35,12 +35,12 @@ public class Orcs : Race
     {
         if (GameManager.Instance.board.boardCases[boardPos].troopsNumber > 0 || GameManager.Instance.board.boardCases[boardPos].forgottenTribe > 0)
         {
-            tunrConquestCount++;
+            turnConquestCount++;
         }
     }
     public override int VictoryPointGain(Player p)
     {
-        return tunrConquestCount;
+        return turnConquestCount;
     }
 
     public override void EndTurn(Player p)

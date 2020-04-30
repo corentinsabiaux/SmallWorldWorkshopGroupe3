@@ -11,6 +11,7 @@ public class LastConquestPhase : PlayerPhase
 
     public override bool doAction(Player player, Action act)
     {
+        Player p = GameManager.Instance.players[GameManager.Instance.activePlayerNumber - 1];
         switch (act.type)
         {
             case Action.ActionType.MapAction:
@@ -35,6 +36,20 @@ public class LastConquestPhase : PlayerPhase
                 player.phase = new EndOfTurnPhase();
                 player.phase.Enter(player);
                 GameManager.Instance.selectedCase = -1;
+                return true;
+                break;
+            case Action.ActionType.SkeletonAction:
+                if (p.victoryPoint > 0 && p.troopsNumber < p.actualRace.troopsMax)
+                {
+                    p.victoryPoint -= 1;
+                    p.troopsNumber += 1;
+                    GameManager.Instance.refreshUis();
+                }
+                else
+                {
+                    Debug.LogError("Conversion impossible, victoryPoint < 1 && p.troopsNumber < p.actualRace.troopsMax");
+
+                }
                 return true;
             default:
                 return false;

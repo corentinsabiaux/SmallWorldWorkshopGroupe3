@@ -12,6 +12,7 @@ public class InfoPanelScript : MonoBehaviour
     public Button dcliningButton;
     public Button startConquest;
     public Button endOfplayerTurn;
+    public Button skeletonButton;
     public InputField numberInput;
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class InfoPanelScript : MonoBehaviour
         endOfplayerTurn.onClick.AddListener(PlayerTurnEnd);
         dcliningButton.onClick.AddListener(Declining);
         startConquest.onClick.AddListener(starConquest);
+        skeletonButton.onClick.AddListener(skeletonToken);
     }
 
     // Update is called once per frame
@@ -67,6 +69,11 @@ public class InfoPanelScript : MonoBehaviour
         endOfplayerTurn.interactable = true;
         startConquest.interactable = false;
         dcliningButton.interactable = false;
+        skeletonButton.interactable = false;
+        if (p.phase.phaseName == "FirstConquestPhase" && p.actualRace.name == "Skeleton" || p.phase.phaseName == "ConquestPhase" && p.actualRace.name == "Skeleton" || p.phase.phaseName == "LastConquestPhase" && p.actualRace.name == "Skeleton")
+        {
+            skeletonButton.interactable = true;
+        }
         switch (p.phase.phaseName)
         {
             case "ConquestPhase":
@@ -107,5 +114,10 @@ public class InfoPanelScript : MonoBehaviour
         public void starConquest()
     {
         GameManager.Instance.players[GameManager.Instance.activePlayerNumber - 1].doAction(new Action(Action.ActionType.StartConquestAction, -1));
+    }
+
+        public void skeletonToken()
+    {
+        GameManager.Instance.players[GameManager.Instance.activePlayerNumber - 1].doAction(new Action(Action.ActionType.SkeletonAction, -1));
     }
 }

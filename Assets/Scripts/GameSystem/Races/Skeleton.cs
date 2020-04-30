@@ -17,11 +17,9 @@ public class Skeleton : Race
         type = RaceType.Skeleton;
     }
 
-    public int turnConquestCount;
-
     public override void StartTurn(Player p)
     {
-        turnConquestCount = 0;
+      
     }
     public override bool CanConquest(int boardPos, Player p)
     {
@@ -34,14 +32,11 @@ public class Skeleton : Race
     }
     public override void Conquest(int boardPos, Player p)
     {
-        if (GameManager.Instance.board.boardCases[boardPos].troopsNumber > 0 || GameManager.Instance.board.boardCases[boardPos].forgottenTribe > 0)
-        {
-            turnConquestCount++;
-        }
+
     }
     public override int VictoryPointGain(Player p)
     {
-        return turnConquestCount;
+        return 0;
     }
 
     public override void EndTurn(Player p)

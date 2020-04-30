@@ -9,10 +9,10 @@ public class Deck
         races = new List<Race>() {
             new Amazones(), new Dwarf(), new Elven(),
             new Orcs(), new Giants(), new Humans(),
-            new Skaven(), new Amazones(), new Dwarf(),
+            new Skaven(), new Skeleton(), new Amazones(), new Dwarf(),
             new Elven(), new Orcs(), new Giants(), new Humans(),
-            new Skaven(), new Amazones(), new Dwarf(), new Elven(),
-            new Orcs(), new Giants(), new Humans(), new Skaven()
+            new Skaven(), new Skeleton(), new Amazones(), new Dwarf(), new Elven(),
+            new Orcs(), new Giants(), new Humans(), new Skaven(), new Skeleton()
             };
         powers = new List<Power>() {
              new Alchemists(), new Armed(), new FromCave(),

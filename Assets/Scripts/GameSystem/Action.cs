@@ -12,8 +12,8 @@ public class Action
         LastConquestAction,
         EndOfTurnAction,
         DeclinAction,
-        StartConquestAction
-        
+        StartConquestAction,
+        SkeletonAction
     }
     public Action(ActionType type, int index, int number = -1)
     {

@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
         powerAndRaceDeck = new Deck();
         players = new List<Player>() { new Player(1), new Player(2), new Player(3), new Player(4) };
         playersToRedeploy = new List<int>();
-        gameTurn = 10;
+        gameTurn = 1;
         activePlayerNumber = 1;
         gamePhase = GamePhase.FirstTurn;
         selectedCase = -1;
