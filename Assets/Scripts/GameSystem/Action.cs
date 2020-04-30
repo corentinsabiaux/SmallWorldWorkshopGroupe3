@@ -13,7 +13,7 @@ public class Action
         EndOfTurnAction,
         DeclinAction,
         StartConquestAction,
-        SkeletonAction
+        SkeletonAction //Ajout de l'action de la race Squelette.
     }
     public Action(ActionType type, int index, int number = -1)
     {

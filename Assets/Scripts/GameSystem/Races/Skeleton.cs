@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Skeleton : Race
 {
+    //La race Squelette est implémenté, son pouvoir est visible en action dans les scripts FirstConquestPhase / ConquestPhase / LastConquestPhase.
     public Skeleton()
     {
         name = "Skeleton";

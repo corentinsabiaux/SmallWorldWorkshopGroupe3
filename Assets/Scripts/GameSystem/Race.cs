@@ -20,7 +20,7 @@ public abstract class Race
         Giants,
         Skaven,
         Humans,
-        Skeleton,
+        Skeleton, //Ajout de la race type Skeleton.
         nothing
     }
 

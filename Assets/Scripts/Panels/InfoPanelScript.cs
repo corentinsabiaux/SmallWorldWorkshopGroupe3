@@ -12,7 +12,7 @@ public class InfoPanelScript : MonoBehaviour
     public Button dcliningButton;
     public Button startConquest;
     public Button endOfplayerTurn;
-    public Button skeletonButton;
+    public Button skeletonButton; //Ajout de la référence du skeletonButton présent dans la scène Unity.
     public InputField numberInput;
     // Start is called before the first frame update
     void Start()
@@ -24,7 +24,7 @@ public class InfoPanelScript : MonoBehaviour
         endOfplayerTurn.onClick.AddListener(PlayerTurnEnd);
         dcliningButton.onClick.AddListener(Declining);
         startConquest.onClick.AddListener(starConquest);
-        skeletonButton.onClick.AddListener(skeletonToken);
+        skeletonButton.onClick.AddListener(skeletonToken); //Ajout du script dans le bouton présent dans la scène Unity pour déclencher l'action de la race Squelette.
     }
 
     // Update is called once per frame
@@ -34,6 +34,7 @@ public class InfoPanelScript : MonoBehaviour
     }
     public void RefreshUi()
     {
+        //Ajout de la référence du script player pour obtenir le joueur actuel.
         Player p = GameManager.Instance.players[GameManager.Instance.activePlayerNumber - 1];
         if (GameManager.Instance.selectedCase == -1)
         {
@@ -69,10 +70,13 @@ public class InfoPanelScript : MonoBehaviour
         endOfplayerTurn.interactable = true;
         startConquest.interactable = false;
         dcliningButton.interactable = false;
+        //Par sécurité, on met en false la possibilité d'appuyer sur le bouton dans tous les cas.
         skeletonButton.interactable = false;
         if (p.phase.phaseName == "FirstConquestPhase" && p.actualRace.name == "Skeleton" || p.phase.phaseName == "ConquestPhase" && p.actualRace.name == "Skeleton" || p.phase.phaseName == "LastConquestPhase" && p.actualRace.name == "Skeleton")
+        //Si on est dans toutes les phases de Conquête alors ...
         {
             skeletonButton.interactable = true;
+            //Le bouton de déclenchement de l'action de la race Squelette peut-être cliqué.
         }
         switch (p.phase.phaseName)
         {
@@ -115,7 +119,7 @@ public class InfoPanelScript : MonoBehaviour
     {
         GameManager.Instance.players[GameManager.Instance.activePlayerNumber - 1].doAction(new Action(Action.ActionType.StartConquestAction, -1));
     }
-
+    //Ajout du déclenchement de l'action de race Squelette.
         public void skeletonToken()
     {
         GameManager.Instance.players[GameManager.Instance.activePlayerNumber - 1].doAction(new Action(Action.ActionType.SkeletonAction, -1));

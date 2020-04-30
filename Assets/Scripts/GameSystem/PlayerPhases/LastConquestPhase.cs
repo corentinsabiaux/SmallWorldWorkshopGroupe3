@@ -11,6 +11,7 @@ public class LastConquestPhase : PlayerPhase
 
     public override bool doAction(Player player, Action act)
     {
+        //Ajout de la référence du script player pour obtenir le joueur actuel.
         Player p = GameManager.Instance.players[GameManager.Instance.activePlayerNumber - 1];
         switch (act.type)
         {
@@ -38,16 +39,17 @@ public class LastConquestPhase : PlayerPhase
                 GameManager.Instance.selectedCase = -1;
                 return true;
                 break;
-            case Action.ActionType.SkeletonAction:
-                if (p.victoryPoint > 0 && p.troopsNumber < p.actualRace.troopsMax)
+            case Action.ActionType.SkeletonAction: //Ajout de l'action de la faction Squelette.
+                if (p.victoryPoint > 0 && p.troopsNumber < p.actualRace.troopsMax) //Si les points de victoire du joueur actuel sont > 0 et que le nombre de troupes qu'il possède est inférieur au nombre de troupe pouvant être instancié alors ... 
                 {
-                    p.victoryPoint -= 1;
+                    //On convertit 1 point de victoire en 1 unité.
+                    p.victoryPoint -= 1; 
                     p.troopsNumber += 1;
-                    GameManager.Instance.refreshUis();
+                    GameManager.Instance.refreshUis(); //On rafraîchit l'UI pour que la conversion soit visible au joueur.
                 }
                 else
                 {
-                    Debug.LogError("Conversion impossible, victoryPoint < 1 && p.troopsNumber < p.actualRace.troopsMax");
+                    Debug.LogError("Conversion impossible, victoryPoint < 1 && p.troopsNumber < p.actualRace.troopsMax"); //Concerne que le debug, sera supprimé en master.
 
                 }
                 return true;
@@ -101,6 +103,7 @@ public class LastConquestPhase : PlayerPhase
 
         if (b.haveFortresse) { cost++; }
         if (b.haveTrollLair) { cost++; }
+        if (b.haveSaloon) { cost++; } //Patch d'Enzo (à commenter)
         if (b.type == BoardCase.CaseType.Mountain) { cost++; }
         cost += b.forgottenTribe * 1;
         cost += b.camping * 1;
@@ -131,6 +134,7 @@ public class LastConquestPhase : PlayerPhase
                 }
             }
             player.actualRace.Conquest(boardPos,player);
+            player.actualPower.Conquest(boardPos, player); //Patch d'Enzo (à commenter)
             player.conquestedCase.Add(boardPos);
             b.troopsNumber = cost;
             b.raceType = player.actualRace.type;
