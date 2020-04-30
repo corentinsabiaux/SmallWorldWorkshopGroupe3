@@ -21,8 +21,8 @@ public class BoardCase
         Mine,
         MagicSource,
         Cave,
-        Saloon,
-        Nothing
+        Nothing,
+        Saloon
     }
 
 
@@ -41,7 +41,7 @@ public class BoardCase
         haveTrollLair = false;
         haveHero = false;
         haveDragon = false;
-        haveSaloon = false;
+        haveSaloon = false; //le pion saloon est désactivé, à ne pas confondre avec la particularité saloon
         raceType = Race.RaceType.nothing;
         racePhase = Race.RacePhase.Actual;
         playerNumber = 0;

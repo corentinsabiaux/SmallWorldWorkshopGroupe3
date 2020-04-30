@@ -31,9 +31,9 @@ public class Alcoolic : Power
         int gain = 0;
         foreach (int key in p.conquestedCase)
         {
-            if (GameManager.Instance.board.boardCases[key].adventage == BoardCase.CaseAdventage.Saloon)
+            if (GameManager.Instance.board.boardCases[key].adventage == BoardCase.CaseAdventage.Saloon) //pour chaque case saloon conquise
             {
-                gain++;
+                gain++; //on gagne 1 point
             }
         }
         return gain;
@@ -42,13 +42,13 @@ public class Alcoolic : Power
     {
         foreach (int key in p.conquestedCase)
         {
-            if (GameManager.Instance.board.boardCases[key].adventage == BoardCase.CaseAdventage.Saloon)
+            if (GameManager.Instance.board.boardCases[key].adventage == BoardCase.CaseAdventage.Saloon) //pour chaque case saloon conquise
             {
-                GameManager.Instance.board.boardCases[key].haveSaloon = true;
+                GameManager.Instance.board.boardCases[key].haveSaloon = true; //on met un jeton saloon qui défend
             }
             else
             {
-                GameManager.Instance.board.boardCases[key].haveSaloon = false;
+                GameManager.Instance.board.boardCases[key].haveSaloon = false; //sinon on en met pas
             }
         }
     }
@@ -60,7 +60,7 @@ public class Alcoolic : Power
     {
         foreach (int key in p.conquestedCase)
         {
-            GameManager.Instance.board.boardCases[key].haveSaloon = false;
+            GameManager.Instance.board.boardCases[key].haveSaloon = false; //on retire tout les jetons saloon qui défendent
         }
     }
 }

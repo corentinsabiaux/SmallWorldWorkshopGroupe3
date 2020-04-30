@@ -31,7 +31,8 @@ public class Nomad : Power
     }
     public override int VictoryPointGain(Player p)
     {
-        int gain = turnConquest * 10;
+        int gain = turnConquest * 3;
+        gain -= p.conquestedCase.Count;
         return gain;
     }
 

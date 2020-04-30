@@ -95,7 +95,7 @@ public class FirstConquestPhase : PlayerPhase
         if (b.haveFortresse) { cost++; }
         if (b.haveTrollLair) { cost++; }
         if (b.type == BoardCase.CaseType.Mountain) { cost++; }
-        if (b.haveSaloon) { cost++; } //Patch d'Enzo (à commenter)
+        if (b.haveSaloon) { cost++; } //en gros le jeton saloon il défend de 1
         cost += b.forgottenTribe * 1;
         cost += b.camping * 1;
 
@@ -123,7 +123,7 @@ public class FirstConquestPhase : PlayerPhase
                 }
             }
             player.actualRace.Conquest(boardPos,player);
-            player.actualPower.Conquest(boardPos, player); //Patch d'Enzo (à commenter)
+            player.actualPower.Conquest(boardPos, player); //on prend en compte les pouvoirs dans la phase conquest
             player.conquestedCase.Add(boardPos);
             b.troopsNumber = cost;
             b.raceType = player.actualRace.type;
