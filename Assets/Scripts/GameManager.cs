@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
     public OnUiChange onUiChangeCallBack;
     public delegate void onEndGame();
     public onEndGame onEndGameCallback;
-    public int SceneToLoad;
+    public int SceneToLoad;//permet de choisir la scene a charger via les build settings
 
 
     // Start is called before the first frame update
@@ -92,7 +92,7 @@ public class GameManager : MonoBehaviour
             if (gameTurn == 10)
             {
                 EndOfGame();
-                SceneManager.LoadScene(SceneToLoad);
+                SceneManager.LoadScene(SceneToLoad);//charge la scene
             }
             else
             {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Leave : MonoBehaviour
 {
-    public void ExitGame()
+    public void ExitGame()// permet de quitter le jeu
     {
         Application.Quit();
     }

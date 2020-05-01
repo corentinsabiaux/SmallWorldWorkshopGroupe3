@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 3de8ce5f86eefb64d93fb5fde34101b8
   - enabled: 1
-    path: Assets/Scenes/Play.unity
+    path: Assets/Scenes/PlayResponsive.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/CreditsScene.unity
