@@ -27,6 +27,7 @@ public abstract class Race
 
     public string name;
     public string desc;
+    public string imagePath;
     public RacePhase phase { get; set; }
     public RaceType type { get; set; }
     public int victoryPointAtPick { get; set; }

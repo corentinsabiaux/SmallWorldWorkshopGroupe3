@@ -6,6 +6,7 @@ public abstract class Power
 {
     public string name;
     public string desc;
+    public string imagePath;
 
     public int troopsNumber { get; set; }
 
