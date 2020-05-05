@@ -13,6 +13,7 @@ public class InfoPanelScript : MonoBehaviour
     public Button startConquest;
     public Button endOfplayerTurn;
     public Button skeletonButton; //Ajout de la référence du skeletonButton présent dans la scène Unity.
+    public Button salamanderButton; //Ajout de la référence du salamanderButton présent dans la scène Unity.
     public InputField numberInput;
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,7 @@ public class InfoPanelScript : MonoBehaviour
         dcliningButton.onClick.AddListener(Declining);
         startConquest.onClick.AddListener(starConquest);
         skeletonButton.onClick.AddListener(skeletonToken); //Ajout du script dans le bouton présent dans la scène Unity pour déclencher l'action de la race Squelette.
+        salamanderButton.onClick.AddListener(salamanderToken); //Ajout du script dans le bouton présent dans la scène Unity pour déclencher l'action de la race Salamander.
     }
 
     // Update is called once per frame
@@ -56,7 +58,7 @@ public class InfoPanelScript : MonoBehaviour
             {
                 GameManager.Instance.selectedNumber = numberInput.text == "" ? -1 : Int32.Parse(numberInput.text);
             }
-            if (p.phase.phaseName == "EndOfTurnPhase" || p.phase.phaseName == "LoosConquestedCasePhase" )
+            if (p.phase.phaseName == "EndOfTurnPhase" || p.phase.phaseName == "LoosConquestedCasePhase")
             {
                 numberInput.interactable = true;
             }
@@ -78,6 +80,15 @@ public class InfoPanelScript : MonoBehaviour
             skeletonButton.interactable = true;
             //Le bouton de déclenchement de l'action de la race Squelette peut-être cliqué.
         }
+        //Par sécurité, on met en false la possibilité d'appuyer sur le bouton dans tous les cas.
+        salamanderButton.interactable = false;
+        if (p.phase.phaseName == "LastConquestPhase" && p.actualRace.name == "Salamander" && GameManager.Instance.selectedCase > 0 && GameManager.Instance.selectedCase < 40 && p.victoryPoint > 0)
+        //Si on est dans la phase 'Dernière conquête' alors ...
+        {
+            salamanderButton.interactable = true;
+            //Le bouton de déclenchement de l'action de la race Salamander peut-être cliqué.
+        }
+
         switch (p.phase.phaseName)
         {
             case "ConquestPhase":
@@ -110,18 +121,23 @@ public class InfoPanelScript : MonoBehaviour
         GameManager.Instance.players[GameManager.Instance.activePlayerNumber - 1].doAction(new Action(Action.ActionType.EndOfTurnAction, -1));
     }
 
-        public void Declining()
+    public void Declining()
     {
         GameManager.Instance.players[GameManager.Instance.activePlayerNumber - 1].doAction(new Action(Action.ActionType.DeclinAction, -1));
     }
 
-        public void starConquest()
+    public void starConquest()
     {
         GameManager.Instance.players[GameManager.Instance.activePlayerNumber - 1].doAction(new Action(Action.ActionType.StartConquestAction, -1));
     }
     //Ajout du déclenchement de l'action de race Squelette.
-        public void skeletonToken()
+    public void skeletonToken()
     {
         GameManager.Instance.players[GameManager.Instance.activePlayerNumber - 1].doAction(new Action(Action.ActionType.SkeletonAction, -1));
+    }
+    //Ajout du déclenchement de l'action de race Salamander.
+    public void salamanderToken()
+    {
+        GameManager.Instance.players[GameManager.Instance.activePlayerNumber - 1].doAction(new Action(Action.ActionType.SalamanderAction, -1));
     }
 }

@@ -21,8 +21,8 @@ public class BoardCase
         Mine,
         MagicSource,
         Cave,
-        Nothing,
-        Saloon
+        Saloon,
+        Nothing
     }
 
 

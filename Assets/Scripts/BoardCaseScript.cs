@@ -27,6 +27,7 @@ public class BoardCaseScript : MonoBehaviour
     {
         if (GameManager.Instance.players[GameManager.Instance.activePlayerNumber-1].doAction(new Action(Action.ActionType.MapAction,CaseId,GameManager.Instance.selectedNumber)))
         {
+
         }
         else
         {

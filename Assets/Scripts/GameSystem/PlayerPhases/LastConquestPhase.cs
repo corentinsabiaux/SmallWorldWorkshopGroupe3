@@ -53,6 +53,27 @@ public class LastConquestPhase : PlayerPhase
 
                 }
                 return true;
+                break;
+            case Action.ActionType.SalamanderAction: //Ajout de l'action de la faction Salamandre.
+                int rollResult = GameManager.Instance.RollTheDice(); //On lance un dé dont le résultat va être stocké localement dans la variable int rollResult.
+                if (rollResult == 0) //Si le résultat est 0, on entre en état d'échec.
+                {
+                    p.victoryPoint -= 1; //Le joueur consomme un point de victoire pour l'utilisation du pouvoir.
+                    GameManager.Instance.NextPlayer(); //Le joueur perd son tour de jeu.
+                }
+
+                if (rollResult == 1 || rollResult == 2) //Si le résultat est compris entre 1 & 2, on entre en état neutre.
+                {
+                    p.victoryPoint -= 1; //Le joueur consomme un point de victoire pour l'utilisation du pouvoir.
+                }
+
+                if (rollResult == 3) //Si le résultat est 3, on entre en état d'échec.
+                {
+                    return Conquest(GameManager.Instance.selectedCase); //Le joueur place une unité et conquit le territoire.
+                }
+                GameManager.Instance.refreshUis(); //On rafraîchit l'UI pour que le tout soit visible au joueur.
+                return true;
+                break;
             default:
                 return false;
                 break;

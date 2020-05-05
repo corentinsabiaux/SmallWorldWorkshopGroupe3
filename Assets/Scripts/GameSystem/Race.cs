@@ -21,7 +21,7 @@ public abstract class Race
         Skaven,
         Humans,
         Skeleton, //Ajout de la race type Skeleton.
-        Salamander,
+        Salamander, //Ajout de la race type Salamander.
         nothing
     }
 

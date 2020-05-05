@@ -9,18 +9,22 @@ public class Deck
         races = new List<Race>() {
             new Amazones(), new Dwarf(), new Elven(),
             new Orcs(), new Giants(), new Humans(),
-            new Skaven(), new Skeleton(), new Amazones(), new Dwarf(),
+            new Skaven(), new Skeleton(), new Salamander(), new Amazones(), new Dwarf(),
             new Elven(), new Orcs(), new Giants(), new Humans(),
-            new Skaven(), new Skeleton(), new Amazones(), new Dwarf(), new Elven(),
-            new Orcs(), new Giants(), new Humans(), new Skaven(), new Skeleton()
+            new Skaven(), new Skeleton(), new Salamander(), new Amazones(), new Dwarf(), new Elven(),
+            new Orcs(), new Giants(), new Humans(), new Skaven(), new Skeleton(), new Salamander()
+
+            //Les races custom Squelette & Salamander sont ajoutés dans le Deck.
             };
         powers = new List<Power>() {
-             new Alchemists(), new Armed(), new FromCave(),
+             new Alchemists(),new Alcoolic(), new Armed(), new FromCave(),
              new FromForest(), new FromHils(), new FromSwamp(),
-             new Merchant(), new Alchemists(), new Armed(), new FromCave(),
-             new FromForest(), new FromHils(), new FromSwamp(), new Merchant(),
-             new Alchemists(), new Armed(), new FromCave(), new FromForest(), new FromHils(),
-             new FromSwamp(), new Merchant()
+             new Merchant(), new Alchemists(), new Alcoolic(), new Armed(), new FromCave(),
+             new FromForest(), new FromHils(), new FromSwamp(), new Merchant(), new Nomad(),
+             new Alchemists(),new Alcoolic(), new Armed(), new FromCave(), new FromForest(), new FromHils(),
+             new FromSwamp(), new Merchant(), new Nomad()
+
+             //Les pouvoirs custom Alcoolic & Nomad sont ajoutés dans le Deck.
             };
 
         races.Shuffle();
@@ -62,18 +66,22 @@ public class Deck
             races = new List<Race>() {
             new Amazones(), new Dwarf(), new Elven(),
             new Orcs(), new Giants(), new Humans(),
-            new Skaven(), new Amazones(), new Dwarf(),
+            new Skaven(), new Skeleton(), new Salamander(), new Amazones(), new Dwarf(),
             new Elven(), new Orcs(), new Giants(), new Humans(),
-            new Skaven(), new Amazones(), new Dwarf(), new Elven(),
-            new Orcs(), new Giants(), new Humans(), new Skaven()
+            new Skaven(), new Skeleton(), new Salamander(), new Amazones(), new Dwarf(), new Elven(),
+            new Orcs(), new Giants(), new Humans(), new Skaven(), new Skeleton(), new Salamander()
+
+            //Les races custom Squelette & Salamander sont ajoutés au système d'échange point de victoire -> race / pouvoir.
             };
             powers = new List<Power>() {
-             new Alchemists(), new Armed(), new FromCave(),
+             new Alchemists(), new Alcoolic(), new Armed(), new FromCave(),
              new FromForest(), new FromHils(), new FromSwamp(),
-             new Merchant(), new Alchemists(), new Armed(), new FromCave(),
-             new FromForest(), new FromHils(), new FromSwamp(), new Merchant(),
-             new Alchemists(), new Armed(), new FromCave(), new FromForest(), new FromHils(),
-             new FromSwamp(), new Merchant()
+             new Merchant(), new Nomad(), new Alchemists(), new Alcoolic(), new Armed(), new FromCave(),
+             new FromForest(), new FromHils(), new FromSwamp(), new Merchant(), new Nomad(),
+             new Alchemists(), new Alcoolic(), new Armed(), new FromCave(), new FromForest(), new FromHils(),
+             new FromSwamp(), new Merchant(), new Nomad()
+
+             //Les pouvoirs custom Alcoolic & Nomad sont ajoutés au système d'échange point de victoire -> race / pouvoir.
             };
 
         }
