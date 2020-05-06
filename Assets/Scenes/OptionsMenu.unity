@@ -341,12 +341,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6792453, g: 0.5305058, b: 0.30437878, a: 0.98039216}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 52fd2a94652fdff47ae0d8ac85978d76, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0c3404d1700f5344a9bd0e73ecf138b9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -396,7 +396,7 @@ RectTransform:
   m_Father: {fileID: 1160420582}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.9275, y: 0.8714491}
+  m_AnchorMin: {x: 0.92625, y: 0.897}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
@@ -414,12 +414,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6792453, g: 0.5305058, b: 0.30437878, a: 0.98039216}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 52fd2a94652fdff47ae0d8ac85978d76, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0c3404d1700f5344a9bd0e73ecf138b9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -518,7 +518,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 595149830}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2266524905463059876, guid: 4b291e5186b5e76479a49d324e43c86f,
+          type: 3}
+        m_MethodName: ChangeScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &595149830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1073,6 +1085,7 @@ GameObject:
   - component: {fileID: 1185954181}
   - component: {fileID: 1185954180}
   - component: {fileID: 1185954183}
+  - component: {fileID: 1185954184}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1158,7 +1171,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 9be79bf015891094187d089408ffef4a, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 0.01
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1242,6 +1255,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1185954184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185954179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff9c7c5763ea95745849ce893dff6328, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1366099264
 GameObject:
   m_ObjectHideFlags: 0
@@ -1323,7 +1348,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1366099267}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3273697595970277363, guid: a064ba580f6a5bc4c993c1efc905f402,
+          type: 3}
+        m_MethodName: ChangeScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1366099267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1549,7 +1586,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 80, y: 29.54}
+  m_AnchoredPosition: {x: 80, y: 37.071}
   m_SizeDelta: {x: 160, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1948927808
@@ -1692,6 +1729,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4076992500635146314, guid: d821f4575c666474489b87bd3408ef96,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4076992500788239296, guid: d821f4575c666474489b87bd3408ef96,
         type: 3}
       propertyPath: m_Name
@@ -1722,6 +1764,11 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 980107829}
+    - target: {fileID: 4076992500788239302, guid: d821f4575c666474489b87bd3408ef96,
+        type: 3}
+      propertyPath: m_Value
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 4076992500788239303, guid: d821f4575c666474489b87bd3408ef96,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1831,6 +1878,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076992500926086258, guid: d821f4575c666474489b87bd3408ef96,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076992500926086258, guid: d821f4575c666474489b87bd3408ef96,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076992501820901053, guid: d821f4575c666474489b87bd3408ef96,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -5.0000153
       objectReference: {fileID: 0}
     - target: {fileID: 8802518512949825715, guid: d821f4575c666474489b87bd3408ef96,
         type: 3}

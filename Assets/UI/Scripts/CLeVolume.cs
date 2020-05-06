@@ -14,7 +14,7 @@ public class CLeVolume : MonoBehaviour
         if (slider.value > 0)
         {
             //ajuste le volume
-            mixer.SetFloat("GamVol", Mathf.Log10(slider.value) * 20);
+            mixer.SetFloat("GamVol", Mathf.Log10(slider.value) * 80);
         }
         else
         {
