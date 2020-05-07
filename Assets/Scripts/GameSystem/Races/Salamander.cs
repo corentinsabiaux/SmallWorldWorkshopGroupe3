@@ -8,7 +8,7 @@ public class Salamander : Race
     {
         name = "Salamander";
         desc = "Toute région qui comporte une Mine occupée par vos Salamandres rapporte 1 jeton de victoire supplémentaire en fin de tour. Pouvoir applicable qu'en cas de dernière conquête : 'explosion instable'. Coût : 1 pt de victoire. 3 possibilités : Echec -> Le joueur passe son tour et a investi pour rien. Neutre : Le joueur a perdu un 1 pt de victoire pour rien. Réussite : Le joueur ne perds pas de point de victoire et prends le territoire sélectionné en plaçant son unité, même contesté.";
-
+        imagePath = "Race/Salamandre_avis";
         phase = RacePhase.Actual;
         victoryPointAtPick = 0;
         troopsNumber = 3;

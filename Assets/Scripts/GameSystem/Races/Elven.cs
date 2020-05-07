@@ -5,9 +5,9 @@ public class Elven : Race
 {
     public Elven()
     {
-        name = "Elefs";
+        name = "Cactus";
         desc = "";
-
+        imagePath = "Race/Cacpichos_avis";
         phase = RacePhase.Actual;
         victoryPointAtPick = 0;
         troopsNumber = 6;

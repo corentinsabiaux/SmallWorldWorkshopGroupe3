@@ -7,7 +7,7 @@ public class Humans : Race
     {
         name = "Humans";
         desc = "";
-
+        imagePath = "Race/Placeholder_avis";
         phase = RacePhase.Actual;
         victoryPointAtPick = 0;
         troopsNumber = 5;

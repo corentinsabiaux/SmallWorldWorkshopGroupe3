@@ -7,7 +7,7 @@ public class Skaven : Race
     {
         name = "Skaven";
         desc = "";
-
+        imagePath = "Race/Placeholder_avis";
         phase = RacePhase.Actual;
         victoryPointAtPick = 0;
         troopsNumber = 8;

@@ -7,7 +7,7 @@ public class Orcs : Race
     {
         name = "Orcs";
         desc = "";
-
+        imagePath = "Race/Automate_avis";
         phase = RacePhase.Actual;
         victoryPointAtPick = 0;
         troopsNumber = 5;

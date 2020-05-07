@@ -8,6 +8,7 @@ public class Nomad : Power
     {
         name = "Nomad";
         desc = "";
+        imagePath = "Power/Nomad";
         troopsNumber = 5;
         turnConquest = 0; 
     }

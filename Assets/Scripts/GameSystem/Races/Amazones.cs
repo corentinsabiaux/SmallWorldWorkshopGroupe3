@@ -7,7 +7,7 @@ public class Amazones : Race
     {
         name = "Amazones";
         desc = "";
-
+        imagePath = "Race/Placeholder_avis";
         phase = RacePhase.Actual;
         victoryPointAtPick = 0;
         troopsNumber = 6;

@@ -7,7 +7,7 @@ public class Giants : Race
     {
         name = "Giants";
         desc = "";
-
+        imagePath = "Race/Placeholder_avis";
         phase = RacePhase.Actual;
         victoryPointAtPick = 0;
         troopsNumber = 6;

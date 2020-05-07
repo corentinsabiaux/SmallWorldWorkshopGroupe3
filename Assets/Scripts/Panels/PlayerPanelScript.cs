@@ -7,8 +7,10 @@ public class PlayerPanelScript : MonoBehaviour
 {
     public Text playerNumber;
     public Text victoryPoint;
-    public Text raceName;
-    public Text powerName;
+    //public Text raceName;
+    //public Text powerName;
+    public Image raceImage;
+    public Image powerImage;
     public Text phase;
     public Text troopsNumber;
     // Start is called before the first frame update
@@ -33,13 +35,20 @@ public class PlayerPanelScript : MonoBehaviour
         troopsNumber.text = "Nombre de troupes : " + p.troopsNumber;
         if (p.actualRace == null)
         {
-            raceName.text = "Non choisie";
-            powerName.text = "Non choisie";
+            //raceName.text = "Non choisie";
+            //powerName.text = "Non choisie";
         }
         else
         {
-            raceName.text = p.actualRace.name;
-            powerName.text = p.actualPower.name;
+            //raceName.text = p.actualRace.name;
+            //powerName.text = p.actualPower.name;
+
+            //Image[] images = this.GetComponentsInChildren<Image>();
+            //images[0].sprite = Resources.Load<Sprite>(p.actualRace.imagePath);
+            //images[1].sprite = Resources.Load<Sprite>(p.actualPower.imagePath);
+
+            raceImage.sprite = Resources.Load<Sprite>(p.actualRace.imagePath);
+            powerImage.sprite = Resources.Load<Sprite>(p.actualPower.imagePath);
         }
 
     }

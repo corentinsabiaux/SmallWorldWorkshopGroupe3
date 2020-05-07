@@ -41,10 +41,9 @@ public class DeckPanelScript : MonoBehaviour
             int ia = i;
             GameObject go = Instantiate(RaceAndPowerPrefab, listContent.transform);
             Text[] texts = go.GetComponentsInChildren<Text>();
-            texts[0].text = r.name;
-            texts[1].text = GameManager.Instance.powerAndRaceDeck.powersShortList[i].name;
+            //texts[0].text = r.name;
+            //texts[1].text = GameManager.Instance.powerAndRaceDeck.powersShortList[i].name;
             Image[] images = go.GetComponentsInChildren<Image>();
-
             images[0].sprite = Resources.Load<Sprite>(r.imagePath);
             images[1].sprite = Resources.Load<Sprite>(GameManager.Instance.powerAndRaceDeck.powersShortList[i].imagePath);
             go.GetComponentInChildren<Button>().onClick.AddListener(() => { PickRaceAndPower(ia); });

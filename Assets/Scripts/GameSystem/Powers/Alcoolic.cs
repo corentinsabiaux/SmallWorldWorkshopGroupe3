@@ -8,6 +8,7 @@ public class Alcoolic : Power
     {
         name = "Alcoolic";
         desc = "";
+        imagePath = "Power/Alcoolic";
         troopsNumber = 4;
     }
     public override void StartTurn(Player p)

@@ -7,7 +7,7 @@ public class Dwarf : Race
     {
         name = "Nains";
         desc = "";
-
+        imagePath = "Race/Placeholder_avis";
         phase = RacePhase.Actual;
         victoryPointAtPick = 0;
         troopsNumber = 3;

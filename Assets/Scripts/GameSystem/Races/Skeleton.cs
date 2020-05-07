@@ -9,7 +9,7 @@ public class Skeleton : Race
     {
         name = "Skeleton";
         desc = "Vous pouvez utiliser des points de victoires comme des pions, pour la conquête uniquement.";
-
+        imagePath = "Race/Squelettes_avis";
         phase = RacePhase.Actual;
         victoryPointAtPick = 0;
         troopsNumber = 8;
