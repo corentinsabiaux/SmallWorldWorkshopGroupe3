@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using UnityEditor;
+using UnityEditor.Rendering;
 using UnityEngine;
 public class FirstConquestPhase : PlayerPhase
 {
@@ -118,6 +121,7 @@ public class FirstConquestPhase : PlayerPhase
         if (b.haveTrollLair) { cost++; }
         if (b.type == BoardCase.CaseType.Mountain) { cost++; }
         if (b.haveSaloon) { cost++; } //en gros le jeton saloon il défend de 1
+        if (b.troopsNumber != 0) { cost += b.troopsNumber + 1; }
         cost += b.forgottenTribe * 1;
         cost += b.camping * 1;
 
@@ -151,6 +155,22 @@ public class FirstConquestPhase : PlayerPhase
             b.raceType = player.actualRace.type;
             b.playerNumber = player.playerNumber;
             player.troopsNumber -= cost;
+            BoardCaseScript[] objscript = UnityEngine.Object.FindObjectsOfType<BoardCaseScript>();// creer un tableau des objets de la scene ayant un boardcasescript (les cases)
+
+            for (int i = 0; i < cost; i++)//tant que i est inferieur au cout
+            {
+                GameObject t = GameObject.Instantiate(GameManager.Instance.token); //instancie un jeton
+                foreach(BoardCaseScript go in objscript)//parcours le tableau d'objets jusqu'a ↓↓↓
+                {
+                    if(GameManager.Instance.selectedCase == go.CaseId)// ce que la case selectionné a le meme CaseId qu'une case du tableau
+                    {
+                        t.transform.position = go.transform.position; //alors la position du jeton est egale a la position de la case
+                        t.GetComponentInChildren<Renderer>().material.SetTexture("_MainTex", GameManager.Instance.albedo[GameManager.Instance.activePlayerNumber-1]);
+                    }
+                }
+               
+                
+            }
 
             this.Exit();
 
