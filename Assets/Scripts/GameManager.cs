@@ -44,8 +44,8 @@ public class GameManager : MonoBehaviour
     public delegate void onEndGame();
     public onEndGame onEndGameCallback;
     public int SceneToLoad;//permet de choisir la scene a charger via les build settings
-    public GameObject token;
-    public Texture[] albedo = new Texture[4];
+    public GameObject token;// appelle l'objet 3d
+    public Texture[] albedo = new Texture[4];// appelle les 4 couleurs de joueurs
     
 
 

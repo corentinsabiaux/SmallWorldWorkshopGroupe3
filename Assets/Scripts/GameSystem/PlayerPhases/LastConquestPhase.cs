@@ -93,6 +93,10 @@ public class LastConquestPhase : PlayerPhase
 
     public bool CanConquest(int boardPos)
     {
+        if (GameManager.Instance.board.boardCases[boardPos].type == BoardCase.CaseType.water)
+        {
+            return false;
+        }
         if (player.conquestedCase.Contains(boardPos))
         {
             return false;
@@ -172,8 +176,13 @@ public class LastConquestPhase : PlayerPhase
                 {
                     if (GameManager.Instance.selectedCase == go.CaseId)// ce que la case selectionné a le meme CaseId qu'une case du tableau
                     {
-                        t.transform.position = go.transform.position;// alors la position du jeton est egale a la position de la case
-                        t.GetComponentInChildren<Renderer>().material.SetTexture("_MainTex", GameManager.Instance.albedo[GameManager.Instance.activePlayerNumber - 1]);
+                        t.transform.position = go.transform.position; //alors la position du jeton est egale a la position de la case
+                        t.GetComponentInChildren<Renderer>().material.SetTexture("_MainTex", GameManager.Instance.albedo[GameManager.Instance.activePlayerNumber - 1]);//applique a l'albedo la texture ayant le numéro du joueur dans la liste de texture (GameManager)
+                        t.transform.eulerAngles = new Vector3(t.transform.rotation.x, UnityEngine.Random.Range(0f, 360f), t.transform.rotation.z);// donne une rotation aléatoire sur y au jeton
+                        if (i > 0)
+                        {
+                            t.transform.position = new Vector3(t.transform.position.x + 0f, t.transform.position.y + i * 0.05f, t.transform.position.z + 0f);//superpose les jetons
+                        }
                     }
                 }
 
