@@ -341,12 +341,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6792453, g: 0.5305058, b: 0.30437878, a: 0.98039216}
+  m_Color: {r: 0.6792453, g: 0.5305058, b: 0.30437878, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0c3404d1700f5344a9bd0e73ecf138b9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e799c25b6bc0c3f4fa6aaafe0d98b6a6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -419,7 +419,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0c3404d1700f5344a9bd0e73ecf138b9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e799c25b6bc0c3f4fa6aaafe0d98b6a6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1165,13 +1165,13 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1185954179}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 0474755362ffd4841936ea022124a856,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 9be79bf015891094187d089408ffef4a, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d620aa9af3b50bb4a84018ac9c7562d5, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.01
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1768,6 +1768,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Value
       value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076992500788239302, guid: d821f4575c666474489b87bd3408ef96,
+        type: 3}
+      propertyPath: m_MinValue
+      value: 0.0001
       objectReference: {fileID: 0}
     - target: {fileID: 4076992500788239303, guid: d821f4575c666474489b87bd3408ef96,
         type: 3}
