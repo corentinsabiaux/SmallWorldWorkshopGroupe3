@@ -5,7 +5,7 @@ public class Orcs : Race
 {
     public Orcs()
     {
-        name = "Orcs";
+        name = "Automate";
         desc = "";
         imagePath = "Race/Automate_avis";
         phase = RacePhase.Actual;

@@ -30,6 +30,14 @@ public class GameManager : MonoBehaviour
 
     public List<Player> players;
     public List<int> playersToRedeploy;
+    public GameObject[] playerFloat = new GameObject[5]; //les 4 flottants en eux même, le 5 est reservé au placeholder
+    public Texture[] playerFloatAlbedo = new Texture[5];
+    //0 = cactus
+    //1 = salamandre
+    //2 = automate
+    //3 = skeleton
+    //4 = placeholder
+    public Vector3[] playerFloatXYZ = new Vector3[4]; //la location pour les 4 flottants
     public Deck powerAndRaceDeck;
     public Board board;
     public int gameTurn;
