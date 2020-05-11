@@ -8,6 +8,7 @@ public class DeckPanelScript : MonoBehaviour
     public VerticalLayoutGroup listContent;
     public GameObject RaceAndPowerPrefab;
 
+    public GameObject DeckPanel;
     public GameObject DeckCachePanel;
 
     // Start is called before the first frame update
@@ -28,11 +29,12 @@ public class DeckPanelScript : MonoBehaviour
     {
         if (!(GameManager.Instance.players[GameManager.Instance.activePlayerNumber - 1].phase.phaseName == "SelectRaceAndPowerPhase"))
         {
-            DeckCachePanel.SetActive(true);
+            DeckPanel.SetActive(false);
         }
         else
         {
             DeckCachePanel.SetActive(false);
+            DeckPanel.SetActive(true);
         }
         clearVerticalLayout();
         int i = 0;

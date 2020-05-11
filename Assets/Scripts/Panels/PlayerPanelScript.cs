@@ -7,8 +7,8 @@ public class PlayerPanelScript : MonoBehaviour
 {
     public Text playerNumber;
     public Text victoryPoint;
-    //public Text raceName;
-    //public Text powerName;
+    public Text raceName;
+    public Text powerName;
     public Image raceImage;
     public Image powerImage;
     public Text phase;
@@ -27,29 +27,46 @@ public class PlayerPanelScript : MonoBehaviour
     }
     public void RefreshUi()
     {
-
-        Player p = GameManager.Instance.players[GameManager.Instance.activePlayerNumber-1];
+        Player p = GameManager.Instance.players[GameManager.Instance.activePlayerNumber - 1];
         playerNumber.text = "Joueur : " + p.playerNumber;
         victoryPoint.text = "Point de victoire : " + p.victoryPoint;
         phase.text = p.phase.ToString();
         troopsNumber.text = "Nombre de troupes : " + p.troopsNumber;
         if (p.actualRace == null)
         {
-            //raceName.text = "Non choisie";
-            //powerName.text = "Non choisie";
+            raceName.text = "Non choisie";
+            powerName.text = "Non choisie";
+
+            raceImage.sprite = null;
+            powerImage.sprite = null;
         }
         else
         {
-            //raceName.text = p.actualRace.name;
-            //powerName.text = p.actualPower.name;
-
-            //Image[] images = this.GetComponentsInChildren<Image>();
-            //images[0].sprite = Resources.Load<Sprite>(p.actualRace.imagePath);
-            //images[1].sprite = Resources.Load<Sprite>(p.actualPower.imagePath);
+            raceName.text = p.actualRace.name;
+            powerName.text = p.actualPower.name;
 
             raceImage.sprite = Resources.Load<Sprite>(p.actualRace.imagePath);
             powerImage.sprite = Resources.Load<Sprite>(p.actualPower.imagePath);
         }
-
+        
+        switch (GameManager.Instance.activePlayerNumber - 1)
+        {
+            case 0:
+                GameManager.Instance.turnPlayerByLight[3].SetActive(false);
+                GameManager.Instance.turnPlayerByLight[0].SetActive(true);
+                break;
+            case 1:
+                GameManager.Instance.turnPlayerByLight[0].SetActive(false);
+                GameManager.Instance.turnPlayerByLight[1].SetActive(true);
+                break;
+            case 2:
+                GameManager.Instance.turnPlayerByLight[1].SetActive(false);
+                GameManager.Instance.turnPlayerByLight[2].SetActive(true);
+                break;
+            case 3:
+                GameManager.Instance.turnPlayerByLight[2].SetActive(false);
+                GameManager.Instance.turnPlayerByLight[3].SetActive(true);
+                break;
+        }
     }
 }
