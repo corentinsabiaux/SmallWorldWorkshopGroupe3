@@ -120,6 +120,11 @@ public class GameManager : MonoBehaviour
         {
             activePlayerNumber++;
         }
+        if (players[activePlayerNumber - 1].phase.phaseName == "StartOfTurnPhase")
+        {
+            StartOfTurnPhase stp = (StartOfTurnPhase)players[activePlayerNumber - 1].phase;
+            stp.PrepareTroops();
+        }
         refreshUis();
 
     }

@@ -134,7 +134,7 @@ public class ConquestPhase : PlayerPhase
         if (b.haveTrollLair) { cost++; }
         if (b.haveSaloon) { cost++; } //en gros le jeton saloon il défend de 1
         if (b.type == BoardCase.CaseType.Mountain) { cost++; }
-        if (b.troopsNumber != 0) { cost += b.troopsNumber + 1; }
+        if (b.troopsNumber != 0) { cost += b.troopsNumber; }
         cost += b.forgottenTribe * 1;
         cost += b.camping * 1;
 
@@ -166,6 +166,7 @@ public class ConquestPhase : PlayerPhase
             player.actualRace.Conquest(boardPos,player);
             player.actualPower.Conquest(boardPos, player); //on prend en compte les pouvoirs dans la phase conquest
             player.conquestedCase.Add(boardPos);
+            b.troopsNumber = 0;
             b.troopsNumber = cost;
             b.raceType = player.actualRace.type;
             b.playerNumber = player.playerNumber;
@@ -173,7 +174,7 @@ public class ConquestPhase : PlayerPhase
             player.troopsNumber -= cost;
             BoardCaseScript[] objscript = UnityEngine.Object.FindObjectsOfType<BoardCaseScript>();// creer un tableau des objets de la scene ayant un boardcasescript (les cases)
 
-            for (int i = 0; i < cost; i++)//tant que i est inferieur au cout
+           /* for (int i = 0; i < cost; i++)//tant que i est inferieur au cout
             {
                 GameObject t = GameObject.Instantiate(GameManager.Instance.token); //instancie un jeton
                 foreach (BoardCaseScript go in objscript)//parcours le tableau d'objets jusqu'a ↓↓↓
@@ -193,7 +194,7 @@ public class ConquestPhase : PlayerPhase
                 }
 
 
-            }
+            }*/
             if (player.troopsNumber == 0)
             {
                 this.Exit();
