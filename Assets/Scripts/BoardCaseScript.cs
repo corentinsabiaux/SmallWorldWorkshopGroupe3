@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class BoardCaseScript : MonoBehaviour
 {
+    [Range(-1f, 1f)]
+    public float decalageX;
+    [Range(-1f, 1f)]
+    public float decalageZ;
     public int CaseId;
     public BoardCase.CaseAdventage adventage;
     public BoardCase.CaseAdventage adventage2;

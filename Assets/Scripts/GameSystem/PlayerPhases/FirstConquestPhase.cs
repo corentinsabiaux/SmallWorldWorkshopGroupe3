@@ -177,7 +177,9 @@ public class FirstConquestPhase : PlayerPhase
                         {
                             t.transform.position = new Vector3(t.transform.position.x + 0f,t.transform.position.y + i * 0.05f,t.transform.position.z + 0f);//superpose les jetons
                             t.transform.position = new Vector3(t.transform.position.x + UnityEngine.Random.Range(-0.1f, 0.1f), t.transform.position.y, t.transform.position.z + UnityEngine.Random.Range(-0.1f, 0.1f));// donne des random position au jeton pour donner un effet plus realiste
+                            
                         }
+                        t.transform.position = t.transform.position + new Vector3(go.decalageX, 0, go.decalageZ);
                        
                     }
                 }
