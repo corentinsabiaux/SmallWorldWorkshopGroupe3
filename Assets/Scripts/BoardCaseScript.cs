@@ -15,17 +15,28 @@ public class BoardCaseScript : MonoBehaviour
     public List<int> adjacenteCaseKeys;
     public bool bord;
     public int forgottenTribe;
+    private Color startColor;
 
     void Start()
     {
         GameManager.Instance.board.AddCase(CaseId, new BoardCase(adventage, adventage2, type, adjacenteCaseKeys, forgottenTribe, bord));
+        startColor = GetComponent<MeshRenderer>().material.color;
         GameManager.Instance.onUiChangeCallBack += RefreshUI;
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+        if (GameManager.Instance.selectedCase == CaseId)
+        {
+            Debug.Log(CaseId);
+            
+            GetComponent<MeshRenderer>().material.color = Color.yellow;
+        }
+        else
+        {
+            GetComponent<MeshRenderer>().material.color = startColor;
+        }
     }
     void OnMouseDown()
     {
