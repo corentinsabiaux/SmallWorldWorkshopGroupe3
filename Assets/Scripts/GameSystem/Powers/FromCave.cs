@@ -5,8 +5,9 @@ public class FromCave : Power
 {
     public FromCave()
     {
-        name = "Des caves";
-        desc = "";
+        name = "Des mines";
+        desc = "Toute région qui comporte une Mine peut-être conquise avec un pion du Peuple de moins que nécessaire, avec un minimum de 1 pion. Les Mines sont adjacentes entre elles.";
+        imagePath = "Power/Cave";
         troopsNumber = 5;
     }
 

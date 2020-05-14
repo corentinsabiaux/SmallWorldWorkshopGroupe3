@@ -5,8 +5,8 @@ public class Dwarf : Race
 {
     public Dwarf()
     {
-        name = "Nains";
-        desc = "";
+        name = "Esprit";
+        desc = "Vous obtenez 1 jeton de victoire supplémentaire en fin de tour par Mine occupée. Ce pouvoir reste actif après le déclin.";
         imagePath = "Race/Placeholder_avis";
         phase = RacePhase.Actual;
         victoryPointAtPick = 0;

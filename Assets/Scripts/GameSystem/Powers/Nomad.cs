@@ -6,8 +6,8 @@ public class Nomad : Power
 {
     public Nomad()
     {
-        name = "Nomad";
-        desc = "";
+        name = "Nomade";
+        desc = "Les teritoires conquis pendant votre tour rapportent 2 points au lieu d'1, mais vous ne gagnez pas de points de victoire à la fin du tour par territoire conquis.";
         imagePath = "Power/Nomad";
         troopsNumber = 5;
         turnConquest = 0; 

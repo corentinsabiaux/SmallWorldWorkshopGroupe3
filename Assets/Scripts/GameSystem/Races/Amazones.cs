@@ -5,8 +5,8 @@ public class Amazones : Race
 {
     public Amazones()
     {
-        name = "Amazones";
-        desc = "";
+        name = "Wendigo";
+        desc = "Vous obtenez 4 troupes spéciales destinés à l'attaque uniquement. Si elles sont utilisées, elles sont remis dans votre main au début de votre tour et lors du redéploiement.";
         imagePath = "Race/Placeholder_avis";
         phase = RacePhase.Actual;
         victoryPointAtPick = 0;

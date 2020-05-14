@@ -5,8 +5,8 @@ public class Elven : Race
 {
     public Elven()
     {
-        name = "Cactus";
-        desc = "";
+        name = "Cacpicho";
+        desc = "Lorsque l’ennemi s’empare d’une de vos régions, vous reprenez en main tous les pions Cacpicho qui l’occupaient, sans devoir en défausser un.";
         imagePath = "Race/Cacpichos_avis";
         phase = RacePhase.Actual;
         victoryPointAtPick = 0;

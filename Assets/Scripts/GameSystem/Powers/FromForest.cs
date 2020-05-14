@@ -5,8 +5,9 @@ public class FromForest : Power
 {
     public FromForest()
     {
-        name = "From Forest";
-        desc = "";
+        name = "Des forêts";
+        desc = "Prenez 1 jeton de victoire supplémentaire pour chaque Forêt que vous occupez en fin de tour.";
+        imagePath = "Power/Forest";
         troopsNumber = 4;
     }
 

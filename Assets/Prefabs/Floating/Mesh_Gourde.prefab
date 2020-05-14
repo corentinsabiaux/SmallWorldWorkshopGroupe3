@@ -247,7 +247,7 @@ GameObject:
   m_Component:
   - component: {fileID: 386067482504672329}
   m_Layer: 0
-  m_Name: Mesh_Gourde 1
+  m_Name: Mesh_Gourde
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

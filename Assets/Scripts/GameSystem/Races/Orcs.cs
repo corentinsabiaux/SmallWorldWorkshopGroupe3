@@ -6,7 +6,7 @@ public class Orcs : Race
     public Orcs()
     {
         name = "Automate";
-        desc = "";
+        desc = "Toute région non-vide conquise par vos Automate durant ce tour rapporte 1 jeton de victoire supplémentaire en fin de tour.";
         imagePath = "Race/Automate_avis";
         phase = RacePhase.Actual;
         victoryPointAtPick = 0;

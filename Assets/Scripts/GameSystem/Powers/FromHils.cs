@@ -5,8 +5,9 @@ public class FromHils : Power
 {
     public FromHils()
     {
-        name = "From Hils";
-        desc = "";
+        name = "Des dunes";
+        desc = "Prenez 1 jaton de victoire supplémentaire pour chaque Dune que vous occupez en fin de tour.";
+        imagePath = "Power/Dune";
         troopsNumber = 4;
     }
 

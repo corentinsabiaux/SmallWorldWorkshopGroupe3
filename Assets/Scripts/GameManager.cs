@@ -30,13 +30,6 @@ public class GameManager : MonoBehaviour
 
     public List<Player> players;
     public List<int> playersToRedeploy;
-    public GameObject[] playerFloat = new GameObject[5]; //les 4 flottants en eux même, le 5 est reservé au placeholder.
-    //0 = cactus
-    //1 = salamandre
-    //2 = automate
-    //3 = skeleton
-    //4 = placeholder
-    public Vector3[] playerFloatXYZ = new Vector3[4]; //la location pour les 4 flottants
     public Deck powerAndRaceDeck;
     public Board board;
     public int gameTurn;
@@ -53,12 +46,14 @@ public class GameManager : MonoBehaviour
     public int SceneToLoad;//permet de choisir la scene a charger via les build settings
     public GameObject token;// appelle l'objet 3d
     public Texture[] albedo = new Texture[4];// appelle les 4 couleurs de joueurs
-    public GameObject[] turnPlayerByLight = new GameObject[4]; //On appelle les 4 spots qui éclairent les tours des joueurs quand c'est leurs tours.
-
-
+    public AudioClip saloonClip;
+    public AudioClip menuClip;
 
     // Start is called before the first frame update
-    void Start() {   }
+    void Start() {
+        GameObject.FindGameObjectWithTag("Music").GetComponent<AudioSource>().Stop();
+        GameObject.FindGameObjectWithTag("Music").GetComponent<AudioSource>().PlayOneShot(saloonClip, GameObject.FindGameObjectWithTag("Music").GetComponent<AudioSource>().volume);
+    }
     // Update is called once per frame
     void Update(){   }
 

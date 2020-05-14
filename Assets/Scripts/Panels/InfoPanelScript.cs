@@ -15,6 +15,7 @@ public class InfoPanelScript : MonoBehaviour
     public Button skeletonButton; //Ajout de la référence du skeletonButton présent dans la scène Unity.
     public Button salamanderButton; //Ajout de la référence du salamanderButton présent dans la scène Unity.
     public InputField numberInput;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,10 +30,6 @@ public class InfoPanelScript : MonoBehaviour
         salamanderButton.onClick.AddListener(salamanderToken); //Ajout du script dans le bouton présent dans la scène Unity pour déclencher l'action de la race Salamander.
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
     public void RefreshUi()
     {
         //Ajout de la référence du script player pour obtenir le joueur actuel.

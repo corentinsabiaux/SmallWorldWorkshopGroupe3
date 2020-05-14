@@ -6,8 +6,8 @@ public class Alcoolic : Power
 {
     public Alcoolic()
     {
-        name = "Alcoolic";
-        desc = "";
+        name = "Alcoolique";
+        desc = "Pour chaque cases Saloon conquises, vous obtenez 1 jeton de victoire supplémentaire à la fin de chaque tour.";
         imagePath = "Power/Alcoolic";
         troopsNumber = 4;
     }

@@ -5,8 +5,9 @@ public class Armed : Power
 {
     public Armed()
     {
-        name = "Armé";
-        desc = "";
+        name = "Milicien";
+        desc = "Toute région peut-être conquise avec 1 pion de Peuple en moins que nécessaire, avec un minimum de 1 pion.";
+        imagePath = "Power/Militiaman";
         troopsNumber = 4;
     }
 

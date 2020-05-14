@@ -7,7 +7,7 @@ public class Skeleton : Race
     //La race Squelette est implémenté, son pouvoir est visible en action dans les scripts FirstConquestPhase / ConquestPhase / LastConquestPhase.
     public Skeleton()
     {
-        name = "Skeleton";
+        name = "Squelette";
         desc = "Vous pouvez utiliser des points de victoires comme des pions, pour la conquête uniquement.";
         imagePath = "Race/Squelettes_avis";
         phase = RacePhase.Actual;

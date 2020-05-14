@@ -5,8 +5,8 @@ public class Giants : Race
 {
     public Giants()
     {
-        name = "Giants";
-        desc = "";
+        name = "Golem";
+        desc = "Vos Golem peuvent conquérir toute région adjacente à une Montagne qu'ils occupent avec 1 jeton de moins que nécessaire, avec un minimum de 1 pion.";
         imagePath = "Race/Placeholder_avis";
         phase = RacePhase.Actual;
         victoryPointAtPick = 0;
