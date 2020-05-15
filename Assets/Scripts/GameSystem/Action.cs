@@ -12,8 +12,9 @@ public class Action
         LastConquestAction,
         EndOfTurnAction,
         DeclinAction,
-        StartConquestAction
-        
+        StartConquestAction,
+        SkeletonAction, //Ajout de l'action de la race Squelette.
+        SalamanderAction //Ajout de l'action de la race Salamander.
     }
     public Action(ActionType type, int index, int number = -1)
     {

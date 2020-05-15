@@ -5,8 +5,9 @@ public class FromHils : Power
 {
     public FromHils()
     {
-        name = "From Hils";
-        desc = "";
+        name = "Des dunes";
+        desc = "Prenez 1 jeton de victoire supplémentaire pour chaque Dune que vous occupez en fin de tour.";
+        imagePath = "Power/Dune";
         troopsNumber = 4;
     }
 
@@ -31,7 +32,7 @@ public class FromHils : Power
         int gain = 0;
         foreach (int key in p.conquestedCase)
         {
-            if (GameManager.Instance.board.boardCases[key].type == BoardCase.CaseType.Hills)
+            if (GameManager.Instance.board.boardCases[key].type == BoardCase.CaseType.Dune)
             {
                 gain++;
             }

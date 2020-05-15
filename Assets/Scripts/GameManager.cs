@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -42,10 +43,17 @@ public class GameManager : MonoBehaviour
     public OnUiChange onUiChangeCallBack;
     public delegate void onEndGame();
     public onEndGame onEndGameCallback;
-    
+    public int SceneToLoad;//permet de choisir la scene a charger via les build settings
+    public GameObject token;// appelle l'objet 3d
+    public Texture[] albedo = new Texture[4];// appelle les 4 couleurs de joueurs
+    public AudioClip saloonClip;
+    public AudioClip menuClip;
 
     // Start is called before the first frame update
-    void Start() {   }
+    void Start() {
+        GameObject.FindGameObjectWithTag("Music").GetComponent<AudioSource>().Stop();
+        GameObject.FindGameObjectWithTag("Music").GetComponent<AudioSource>().PlayOneShot(saloonClip, GameObject.FindGameObjectWithTag("Music").GetComponent<AudioSource>().volume);
+    }
     // Update is called once per frame
     void Update(){   }
 
@@ -90,6 +98,7 @@ public class GameManager : MonoBehaviour
             if (gameTurn == 10)
             {
                 EndOfGame();
+                SceneManager.LoadScene(SceneToLoad);//charge la scene
             }
             else
             {
@@ -105,6 +114,11 @@ public class GameManager : MonoBehaviour
         else
         {
             activePlayerNumber++;
+        }
+        if (players[activePlayerNumber - 1].phase.phaseName == "StartOfTurnPhase")
+        {
+            StartOfTurnPhase stp = (StartOfTurnPhase)players[activePlayerNumber - 1].phase;
+            stp.PrepareTroops();
         }
         refreshUis();
 
@@ -123,4 +137,8 @@ public class GameManager : MonoBehaviour
     public void EndOfGame(){
         onEndGameCallback?.Invoke();
     }
+
+    
+   
+
 }

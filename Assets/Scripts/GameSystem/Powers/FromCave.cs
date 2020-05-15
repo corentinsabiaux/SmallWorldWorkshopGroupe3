@@ -5,8 +5,9 @@ public class FromCave : Power
 {
     public FromCave()
     {
-        name = "Des caves";
-        desc = "";
+        name = "Des mines";
+        desc = "Toute région qui comporte une Mine peut-être conquise avec un pion du Peuple de moins que nécessaire, avec un minimum de 1 pion. Les Mines sont adjacentes entre elles.";
+        imagePath = "Power/Cave";
         troopsNumber = 5;
     }
 
@@ -20,7 +21,7 @@ public class FromCave : Power
     }
     public override void ConquestCost(int boardPos, ref int cost, Player p)
     {
-        if (GameManager.Instance.board.boardCases[boardPos].adventage == BoardCase.CaseAdventage.Cave || GameManager.Instance.board.boardCases[boardPos].adventage2 == BoardCase.CaseAdventage.Cave)
+        if (GameManager.Instance.board.boardCases[boardPos].adventage == BoardCase.CaseAdventage.Mine || GameManager.Instance.board.boardCases[boardPos].adventage2 == BoardCase.CaseAdventage.Mine)
         {
             cost--;
         }

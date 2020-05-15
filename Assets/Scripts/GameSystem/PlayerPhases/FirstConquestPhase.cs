@@ -1,3 +1,6 @@
+using JetBrains.Annotations;
+using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 public class FirstConquestPhase : PlayerPhase
 {
@@ -9,6 +12,8 @@ public class FirstConquestPhase : PlayerPhase
     }
     public override bool doAction(Player player, Action act)
     {
+        //Ajout de la référence du script player pour obtenir le joueur actuel.
+        Player p = GameManager.Instance.players[GameManager.Instance.activePlayerNumber - 1];
         switch (act.type)
         {
             case Action.ActionType.MapAction:
@@ -25,6 +30,41 @@ public class FirstConquestPhase : PlayerPhase
             case Action.ActionType.UnselectAction:
                 GameManager.Instance.selectedCase = -1;
                 GameManager.Instance.refreshUis();
+                return true;
+                break;
+
+            case Action.ActionType.SkeletonAction: //Ajout de l'action de la faction Squelette.
+                if (p.victoryPoint > 0 && p.troopsNumber < p.actualRace.troopsMax) //Si les points de victoire du joueur actuel sont > 0 et que le nombre de troupes qu'il possède est inférieur au nombre de troupe pouvant être instancié alors ... 
+                {
+                    //On convertit 1 point de victoire en 1 unité.
+                    p.victoryPoint -= 1;
+                    p.troopsNumber += 1;
+                    GameManager.Instance.refreshUis(); //On rafraîchit l'UI pour que la conversion soit visible au joueur.
+                }
+                else
+                {
+                }
+                return true;
+                break;
+
+            case Action.ActionType.SalamanderAction: //Ajout de l'action de la faction Salamandre.
+                int rollResult = GameManager.Instance.RollTheDice(); //On lance un dé dont le résultat va être stocké localement dans la variable int rollResult.
+                if (rollResult == 0) //Si le résultat est 0, on entre en état d'échec.
+                {
+                    p.victoryPoint -= 1; //Le joueur consomme un point de victoire pour l'utilisation du pouvoir.
+                    GameManager.Instance.NextPlayer(); //Le joueur perd son tour de jeu.
+                }
+
+                if (rollResult == 1 || rollResult == 2) //Si le résultat est compris entre 1 & 2, on entre en état neutre.
+                {
+                    p.victoryPoint -= 1; //Le joueur consomme un point de victoire pour l'utilisation du pouvoir.
+                }
+
+                if (rollResult == 3) //Si le résultat est 3, on entre en état d'échec.
+                {
+                    return Conquest(GameManager.Instance.selectedCase); //Le joueur place une unité et conquit le territoire.
+                }
+                GameManager.Instance.refreshUis(); //On rafraîchit l'UI pour que le tout soit visible au joueur.
                 return true;
                 break;
             default:
@@ -50,6 +90,10 @@ public class FirstConquestPhase : PlayerPhase
 
     public bool CanConquest(int boardPos)
     {
+        if (GameManager.Instance.board.boardCases[boardPos].type == BoardCase.CaseType.Mer)
+        {
+            return false;
+        }
         if (GameManager.Instance.board.boardCases[boardPos].haveDragon || GameManager.Instance.board.boardCases[boardPos].haveHero)
         {
             return false;
@@ -77,7 +121,9 @@ public class FirstConquestPhase : PlayerPhase
 
         if (b.haveFortresse) { cost++; }
         if (b.haveTrollLair) { cost++; }
-        if (b.type == BoardCase.CaseType.Mountain) { cost++; }
+        if (b.type == BoardCase.CaseType.Canyon) { cost++; }
+        if (b.haveSaloon) { cost++; } //en gros le jeton saloon il défend de 1
+        if (b.troopsNumber != 0) { cost += b.troopsNumber; }
         cost += b.forgottenTribe * 1;
         cost += b.camping * 1;
 
@@ -105,15 +151,17 @@ public class FirstConquestPhase : PlayerPhase
                 }
             }
             player.actualRace.Conquest(boardPos,player);
+            player.actualPower.Conquest(boardPos, player); //on prend en compte les pouvoirs dans la phase conquest
             player.conquestedCase.Add(boardPos);
+            b.troopsNumber = 0;
             b.troopsNumber = cost;
             b.raceType = player.actualRace.type;
             b.playerNumber = player.playerNumber;
             player.troopsNumber -= cost;
-
+            GameManager.Instance.refreshUis();
             this.Exit();
-
             return true;
+            
         }
 
         // conqueête de la zone

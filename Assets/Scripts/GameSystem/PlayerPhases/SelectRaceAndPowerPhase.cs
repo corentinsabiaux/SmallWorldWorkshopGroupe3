@@ -48,7 +48,7 @@ public class SelectRaceAndPowerPhase : PlayerPhase
                     this.Exit();
                     player.phase = new FirstConquestPhase();
                     player.phase.Enter(player);
-                    GameManager.Instance.NextPlayer();
+                    GameManager.Instance.refreshUis();
                     return true;
                 }
                 else

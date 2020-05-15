@@ -5,23 +5,23 @@ public class Orcs : Race
 {
     public Orcs()
     {
-        name = "Orcs";
-        desc = "";
-
+        name = "Automate";
+        desc = "Toute région non-vide conquise par vos Automate durant ce tour rapporte 1 jeton de victoire supplémentaire en fin de tour.";
+        imagePath = "Race/Automate_avis";
         phase = RacePhase.Actual;
         victoryPointAtPick = 0;
         troopsNumber = 5;
         troopsUsed = 0;
         troopsMax = 10;
         type = RaceType.Orcs;
-        tunrConquestCount = 0;
+        turnConquestCount = 0;
     }
 
-    public int tunrConquestCount;
+    public int turnConquestCount;
 
     public override void StartTurn(Player p)
     {
-        tunrConquestCount = 0;
+        turnConquestCount = 0;
     }
     public override bool CanConquest(int boardPos, Player p)
     {
@@ -35,12 +35,12 @@ public class Orcs : Race
     {
         if (GameManager.Instance.board.boardCases[boardPos].troopsNumber > 0 || GameManager.Instance.board.boardCases[boardPos].forgottenTribe > 0)
         {
-            tunrConquestCount++;
+            turnConquestCount++;
         }
     }
     public override int VictoryPointGain(Player p)
     {
-        return tunrConquestCount;
+        return turnConquestCount;
     }
 
     public override void EndTurn(Player p)

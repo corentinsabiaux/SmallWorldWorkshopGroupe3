@@ -20,11 +20,14 @@ public abstract class Race
         Giants,
         Skaven,
         Humans,
+        Skeleton, //Ajout de la race type Skeleton.
+        Salamander, //Ajout de la race type Salamander.
         nothing
     }
 
     public string name;
     public string desc;
+    public string imagePath;
     public RacePhase phase { get; set; }
     public RaceType type { get; set; }
     public int victoryPointAtPick { get; set; }
@@ -41,4 +44,5 @@ public abstract class Race
     public abstract void EndTurn(Player p);
     public abstract void LoosConquestedCase(int boardPos, Player p);
     public abstract void Declin(Player p);
+
 }

@@ -5,9 +5,9 @@ public class Dwarf : Race
 {
     public Dwarf()
     {
-        name = "Nains";
-        desc = "";
-
+        name = "Esprit";
+        desc = "Vous obtenez 1 jeton de victoire supplémentaire en fin de tour par Mine occupée. Ce pouvoir reste actif après le déclin.";
+        imagePath = "Race/Placeholder_avis";
         phase = RacePhase.Actual;
         victoryPointAtPick = 0;
         troopsNumber = 3;
@@ -35,7 +35,7 @@ public class Dwarf : Race
         int vPoint = 0;
         foreach (int i in p.conquestedCase)
         {
-            if (GameManager.Instance.board.boardCases[i].adventage == BoardCase.CaseAdventage.Mine || GameManager.Instance.board.boardCases[i].adventage2 == BoardCase.CaseAdventage.Mine)
+            if (GameManager.Instance.board.boardCases[i].adventage == BoardCase.CaseAdventage.Caverne || GameManager.Instance.board.boardCases[i].adventage2 == BoardCase.CaseAdventage.Caverne)
             {
                 vPoint++;
             }

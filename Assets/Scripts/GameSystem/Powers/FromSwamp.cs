@@ -5,8 +5,9 @@ public class FromSwamp : Power
 {
     public FromSwamp()
     {
-        name = "From Swamp";
-        desc = "";
+        name = "Des Ranch";
+        desc = "Prenez 1 jeton de victoire supplémentaire pour chaque Ranch que vous occupez en fin de tour.";
+        imagePath = "Power/Ranch";
         troopsNumber = 4;
     }
 
@@ -31,7 +32,7 @@ public class FromSwamp : Power
         int gain = 0;
         foreach (int key in p.conquestedCase)
         {
-            if (GameManager.Instance.board.boardCases[key].type == BoardCase.CaseType.Swamp)
+            if (GameManager.Instance.board.boardCases[key].type == BoardCase.CaseType.Ranch)
             {
                 gain++;
             }

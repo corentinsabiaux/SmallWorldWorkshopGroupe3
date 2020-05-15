@@ -5,9 +5,9 @@ public class Skaven : Race
 {
     public Skaven()
     {
-        name = "Skaven";
-        desc = "";
-
+        name = "Totem";
+        desc = "Pas de capacité spécifique, ils sont déjà bien assez nombreux !";
+        imagePath = "Race/Placeholder_avis";
         phase = RacePhase.Actual;
         victoryPointAtPick = 0;
         troopsNumber = 8;

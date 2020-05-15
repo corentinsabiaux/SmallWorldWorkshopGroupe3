@@ -5,8 +5,9 @@ public class Merchant : Power
 {
     public Merchant()
     {
-        name = "Merchant";
-        desc = "";
+        name = "Mineur";
+        desc = "Prenez 1 jeton de victoire supplémentaire pour chaque région que vous occupez en fin de tour.";
+        imagePath = "Power/Gold_digger";
         troopsNumber = 2;
     }
 

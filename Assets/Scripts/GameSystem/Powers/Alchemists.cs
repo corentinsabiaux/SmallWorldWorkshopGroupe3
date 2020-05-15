@@ -5,8 +5,9 @@ public class Alchemists : Power
 {
     public Alchemists()
     {
-        name = "Alchimiste";
-        desc = "";
+        name = "Poudrier";
+        desc = "Tant que votre Peuple n'est pas en déclin, vous obtenez 2 jetons de victoire supplémentaires à la fin de chaque tour.";
+        imagePath = "Power/Powder_compact";
         troopsNumber = 4;
     }
 

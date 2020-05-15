@@ -50,7 +50,7 @@ public class StartOfTurnPhase : PlayerPhase
     {
         this.player = player;
         player.actualRace.StartTurn(player);
-        PrepareTroops();
+        
     }
     public override void Exit()
     {

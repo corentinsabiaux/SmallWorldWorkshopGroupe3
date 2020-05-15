@@ -5,9 +5,9 @@ public class Amazones : Race
 {
     public Amazones()
     {
-        name = "Amazones";
-        desc = "";
-
+        name = "Wendigo";
+        desc = "Vous obtenez 4 troupes spéciales destinés à l'attaque uniquement. Si elles sont utilisées, elles sont remis dans votre main au début de votre tour et lors du redéploiement.";
+        imagePath = "Race/Placeholder_avis";
         phase = RacePhase.Actual;
         victoryPointAtPick = 0;
         troopsNumber = 6;
@@ -45,7 +45,7 @@ public class Amazones : Race
 
     public override void EndTurn(Player p)
     {
-        //TO DO : géré la récupération des troupes special, soit prendre au hazard 4 troop dans les region conquisent dans la limite du possible, soit ajouter un system d'event qui déclanche une fenetre de fonction special pour dire au joueur de slectionner 4 region ou on va retrire les troupe 
+        //TO DO : gérer la récupération des troupes special, soit prendre au hasard 4 troupes dans les régions conquisent dans la limite du possible, soit ajouter un system d'event qui déclanche une fenetre de fonction special pour dire au joueur de slectionner 4 region ou on va retrire les troupe 
         specialTroops = p.troopsNumber >= 4 ? 4 : p.troopsNumber;
         p.troopsNumber -= specialTroops;
         if (specialTroops < 4)

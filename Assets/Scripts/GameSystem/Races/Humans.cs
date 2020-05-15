@@ -5,9 +5,9 @@ public class Humans : Race
 {
     public Humans()
     {
-        name = "Humans";
-        desc = "";
-
+        name = "Ferrailleur";
+        desc = "Toute Dune occupé par vos Ferrailleur rapporte 1 jeton de victoire supplémentaire en fin de tour.";
+        imagePath = "Race/Placeholder_avis";
         phase = RacePhase.Actual;
         victoryPointAtPick = 0;
         troopsNumber = 5;
@@ -40,7 +40,7 @@ public class Humans : Race
         int gain = 0;
         foreach (int key in p.conquestedCase)
         {
-            if (GameManager.Instance.board.boardCases[key].type == BoardCase.CaseType.Fileds){
+            if (GameManager.Instance.board.boardCases[key].type == BoardCase.CaseType.Prairie){
                 gain++;
             }
         }

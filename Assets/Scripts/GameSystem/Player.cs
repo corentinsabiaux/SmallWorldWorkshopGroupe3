@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using System.Linq;
+using JetBrains.Annotations;
 
 public class Player
 {
+    private List<Texture> tokentextures;
     public Player(int playerNumber)
     {
         this.playerNumber = playerNumber;
@@ -18,8 +20,9 @@ public class Player
         conquestedCaseDeclin = new List<int>();
         troopsNumber = 0;
         troopsToRedeploy = 0;
+        
     }
-    
+   
     public int playerNumber { get; set; }
     public int victoryPoint { get; set; }
     public PlayerPhase phase { get; set; }

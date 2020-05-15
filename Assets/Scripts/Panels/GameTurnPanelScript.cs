@@ -74,7 +74,6 @@ public class GameTurnPanelScript : MonoBehaviour
             case 10:
                 img10.enabled  = true;
                 break;
-
             default:
             break;
         }
