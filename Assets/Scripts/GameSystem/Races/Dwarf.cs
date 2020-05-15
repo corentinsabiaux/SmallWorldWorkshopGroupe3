@@ -35,7 +35,7 @@ public class Dwarf : Race
         int vPoint = 0;
         foreach (int i in p.conquestedCase)
         {
-            if (GameManager.Instance.board.boardCases[i].adventage == BoardCase.CaseAdventage.Mine || GameManager.Instance.board.boardCases[i].adventage2 == BoardCase.CaseAdventage.Mine)
+            if (GameManager.Instance.board.boardCases[i].adventage == BoardCase.CaseAdventage.Caverne || GameManager.Instance.board.boardCases[i].adventage2 == BoardCase.CaseAdventage.Caverne)
             {
                 vPoint++;
             }

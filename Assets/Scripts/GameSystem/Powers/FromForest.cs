@@ -32,7 +32,7 @@ public class FromForest : Power
         int gain = 0;
         foreach (int key in p.conquestedCase)
         {
-            if (GameManager.Instance.board.boardCases[key].type == BoardCase.CaseType.Forest)
+            if (GameManager.Instance.board.boardCases[key].type == BoardCase.CaseType.Forêt)
             {
                 gain++;
             }

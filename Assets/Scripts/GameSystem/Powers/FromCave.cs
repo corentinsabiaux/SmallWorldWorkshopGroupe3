@@ -21,7 +21,7 @@ public class FromCave : Power
     }
     public override void ConquestCost(int boardPos, ref int cost, Player p)
     {
-        if (GameManager.Instance.board.boardCases[boardPos].adventage == BoardCase.CaseAdventage.Cave || GameManager.Instance.board.boardCases[boardPos].adventage2 == BoardCase.CaseAdventage.Cave)
+        if (GameManager.Instance.board.boardCases[boardPos].adventage == BoardCase.CaseAdventage.Mine || GameManager.Instance.board.boardCases[boardPos].adventage2 == BoardCase.CaseAdventage.Mine)
         {
             cost--;
         }

@@ -32,7 +32,7 @@ public class FromSwamp : Power
         int gain = 0;
         foreach (int key in p.conquestedCase)
         {
-            if (GameManager.Instance.board.boardCases[key].type == BoardCase.CaseType.Swamp)
+            if (GameManager.Instance.board.boardCases[key].type == BoardCase.CaseType.Ranch)
             {
                 gain++;
             }

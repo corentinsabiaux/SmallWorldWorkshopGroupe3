@@ -6,23 +6,23 @@ public class BoardCase
 {
     public enum CaseType
     {
-        Mountain,
-        ForgottenTribe,
-        Hills,
-        Forest,
-        Swamp,
-        Fileds,
-        water,
-        Nothing
+        Canyon,
+        Apache,
+        Dune,
+        Forêt,
+        Ranch,
+        Prairie,
+        Mer,
+        Rien
     }
 
     public enum CaseAdventage
     {
+        Caverne,
+        SourceMagique,
         Mine,
-        MagicSource,
-        Cave,
         Saloon,
-        Nothing
+        Rien
     }
 
 

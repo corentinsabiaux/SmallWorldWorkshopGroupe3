@@ -33,7 +33,7 @@ public class Giants : Race
         bool haveMountain = false;
         foreach (int key in b.adjacenteCaseKeys)
         {
-            if (GameManager.Instance.board.boardCases[key].type == BoardCase.CaseType.Mountain && GameManager.Instance.board.boardCases[key].playerNumber == p.playerNumber)
+            if (GameManager.Instance.board.boardCases[key].type == BoardCase.CaseType.Canyon && GameManager.Instance.board.boardCases[key].playerNumber == p.playerNumber)
             {
                 haveMountain = true;
             }

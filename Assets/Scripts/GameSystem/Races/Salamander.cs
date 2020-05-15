@@ -37,7 +37,7 @@ public class Salamander : Race
         int nitroToken = 0; //Ajout de la variable nitroToken qui correspond aux dynamites pouvant être consommée pour enclencher le pouvoir.
         foreach (int i in p.conquestedCase) //Pour toutes les cases conquises par le joueur.
         {
-            if (GameManager.Instance.board.boardCases[i].adventage == BoardCase.CaseAdventage.Mine || GameManager.Instance.board.boardCases[i].adventage2 == BoardCase.CaseAdventage.Mine)
+            if (GameManager.Instance.board.boardCases[i].adventage == BoardCase.CaseAdventage.Caverne || GameManager.Instance.board.boardCases[i].adventage2 == BoardCase.CaseAdventage.Caverne)
             //Si leurs avantages principaux où secondaires sont de types Mine alors ...
             {
                 nitroToken++; //On ajoute une dynamite.
